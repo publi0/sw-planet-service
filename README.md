@@ -20,3 +20,7 @@ Documentation and examples
 - Mongo Database
 - Feign Client
 - Docker
+
+## Integrations
+- Star Wars API
+  - https://swapi.dev/about
