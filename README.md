@@ -2,6 +2,9 @@
 
 Star Wars Planet CRUD &amp; API Integration
 
+## Build Status
+[![Build Status](https://github.com/felipe-publio/sw-planet-service/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/felipe-publio/sw-planet-service/actions/workflows/gradle.yml)
+
 ## How to run
 run `docker-compose up`
 
