@@ -7,7 +7,6 @@ import com.starwars.planets.exception.NotAcceptableException;
 import com.starwars.planets.exception.model.AttributeMessage;
 import com.starwars.planets.exception.model.ExceptionResponse;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

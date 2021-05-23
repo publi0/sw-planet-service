@@ -1,7 +1,6 @@
 package com.starwars.planets.config;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.ResponseEntity;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

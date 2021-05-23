@@ -1,7 +1,7 @@
 package com.starwars.planets.converter;
 
-import com.starwars.planets.dto.request.CreatePlanetRequest;
 import com.starwars.planets.Model.Planet;
+import com.starwars.planets.dto.request.CreatePlanetRequest;
 import com.starwars.planets.dto.response.FindPlanetResponse;
 
 import java.util.Map;

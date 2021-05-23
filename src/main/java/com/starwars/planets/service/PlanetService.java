@@ -1,18 +1,18 @@
 package com.starwars.planets.service;
 
-import com.starwars.planets.PlanetProperties;
 import com.starwars.planets.Model.Planet;
+import com.starwars.planets.PlanetProperties;
 import com.starwars.planets.exception.ConflictException;
 import com.starwars.planets.exception.DataNotFoundException;
 import com.starwars.planets.repository.PlanetRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-import springfox.documentation.annotations.Cacheable;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -56,10 +56,10 @@ public class PlanetService {
 
 		return foundPlanets.stream()
 				.map(this::findFilmAppearancesByPlanet)
-				.collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue));
+				.collect(Collectors.toUnmodifiableMap(Entry::getKey, Entry::getValue));
 	}
 
-	public Map.Entry<Planet, Integer> findPlanetWithFilmAppearancesById(String id) {
+	public Entry<Planet, Integer> findPlanetWithFilmAppearancesById(String id) {
 		log.info("Searching planet uuid");
 		return planetRepository.findByUuid(id)
 				.map(this::findFilmAppearancesByPlanet)
@@ -75,7 +75,7 @@ public class PlanetService {
 		planetRepository.delete(foundPlanet);
 	}
 
-	private Map.Entry<Planet, Integer> findFilmAppearancesByPlanet(Planet planet) {
+	private Entry<Planet, Integer> findFilmAppearancesByPlanet(Planet planet) {
 		log.info("Searching planet in SW API with name [{}]", planet.getName());
 		return starWarsIntegration.findOnePlanetByName(planet.getName())
 				.map(y -> Map.entry(planet, y.filmAppearances()))
