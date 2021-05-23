@@ -3,7 +3,17 @@
 Star Wars Planet CRUD &amp; API Integration
 
 ## How to run
-docker-compose up
+run `docker-compose up`
 
 ## How to use
-swagger url: http://localhost:9081/swagger-ui.html#/
+Documentation and examples
+[http://localhost:9081/swagger-ui.html#/](http://localhost:9081/swagger-ui.html#/ "http://localhost:9081/swagger-ui.html#/")
+
+## Stack
+- Java 16
+- Spring Boot
+- Spring Data Mongo
+- Spring Cacheable
+- Mongo Database
+- Feign Client
+- Docker
