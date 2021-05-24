@@ -34,8 +34,9 @@ public class StarWarsIntegration {
 
 			return body.results()
 					.stream()
+					.filter(x -> x.name()
+							.equalsIgnoreCase(name))
 					.findFirst()
-					.filter(x -> x.name().equalsIgnoreCase(name))
 					.map(x -> new FoundPlanetIntegration(x.name(), x.films()
 							.size()));
 		} catch (FeignException e) {
