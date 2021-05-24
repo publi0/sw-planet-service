@@ -1,0 +1,159 @@
+{
+  "info": {
+    "_postman_id": "eaa32d4c-641b-45e4-b08e-acce111081b9",
+    "name": "Star Wars - Planets",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Create Planet",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"climate\": \"arid\",\r\n  \"name\": \"Tatooine\",\r\n  \"terrain\": \"desert\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9081/api/v1/star-wars/planets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9081",
+          "path": [
+            "api",
+            "v1",
+            "star-wars",
+            "planets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Find Planet By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9081/api/v1/star-wars/planets/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9081",
+          "path": [
+            "api",
+            "v1",
+            "star-wars",
+            "planets",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "c8114b1e-1463-4897-bb0e-bfd75967d58e"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Find Planet By Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9081/api/v1/star-wars/planets?name=Tatooine",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9081",
+          "path": [
+            "api",
+            "v1",
+            "star-wars",
+            "planets"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Tatooine"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Find Planet All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9081/api/v1/star-wars/planets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9081",
+          "path": [
+            "api",
+            "v1",
+            "star-wars",
+            "planets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Delete Planet",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9081/api/v1/star-wars/planets/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9081",
+          "path": [
+            "api",
+            "v1",
+            "star-wars",
+            "planets",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "c8114b1e-1463-4897-bb0e-bfd75967d58e"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
