@@ -8,9 +8,17 @@ Star Wars Planet CRUD &amp; API Integration
 ## How to run
 run `docker-compose up`
 
-## How to use
-Documentation and examples
+## Documentation and examples
 [http://localhost:9081/swagger-ui.html#/](http://localhost:9081/swagger-ui.html#/ "http://localhost:9081/swagger-ui.html#/")
+
+## Features
+- Add Planet (Name, Terrain, Climate)
+  - Planets cannot have the same name
+- Find Planet with film appearances information
+  - Find by name
+  - Find by id
+  - Find all
+- Delete a planet
 
 ## Stack
 - Java 16
