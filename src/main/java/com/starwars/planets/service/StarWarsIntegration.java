@@ -39,8 +39,10 @@ public class StarWarsIntegration {
 					.map(x -> new FoundPlanetIntegration(x.name(), x.films()
 							.size()));
 		} catch (FeignException e) {
+			log.error(e);
 			throw new IntegrationException("Error contacting Star Wars API");
-		} catch (NullPointerException e){
+		} catch (NullPointerException e) {
+			log.error(e);
 			throw new IntegrationException("Error parsing content from Star Wars API");
 		}
 	}

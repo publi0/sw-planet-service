@@ -1,9 +1,9 @@
 package com.starwars.planets.service;
 
-import com.starwars.planets.Model.Planet;
 import com.starwars.planets.PlanetProperties;
 import com.starwars.planets.exception.ConflictException;
 import com.starwars.planets.exception.DataNotFoundException;
+import com.starwars.planets.model.Planet;
 import com.starwars.planets.repository.PlanetRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 public class PlanetService {
 
 	public static final int ZERO_APPEARANCES = 0;
+
 	private final PlanetProperties properties;
 	private final PlanetRepository planetRepository;
 	private final StarWarsIntegration starWarsIntegration;
@@ -55,6 +56,7 @@ public class PlanetService {
 		}
 
 		return foundPlanets.stream()
+				.parallel()
 				.map(this::findFilmAppearancesByPlanet)
 				.collect(Collectors.toUnmodifiableMap(Entry::getKey, Entry::getValue));
 	}

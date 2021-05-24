@@ -1,9 +1,8 @@
-package com.starwars.planets.exception.handler;
+package com.starwars.planets.controller.handler;
 
 import com.starwars.planets.exception.ConflictException;
 import com.starwars.planets.exception.DataNotFoundException;
 import com.starwars.planets.exception.IntegrationException;
-import com.starwars.planets.exception.NotAcceptableException;
 import com.starwars.planets.exception.model.AttributeMessage;
 import com.starwars.planets.exception.model.ExceptionResponse;
 import lombok.extern.log4j.Log4j2;
@@ -44,17 +43,6 @@ public class ControllerExceptionHandler {
 		ExceptionResponse err = new ExceptionResponse(HttpStatus.BAD_REQUEST, message);
 
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-				.body(err);
-	}
-
-	@ExceptionHandler(NotAcceptableException.class)
-	@ResponseBody
-	public ResponseEntity<ExceptionResponse> handlingNotAcceptableException(NotAcceptableException e) {
-		log.error("Handling NotAcceptableException", e);
-
-		ExceptionResponse err = new ExceptionResponse(e.getStatus(), e.getMessage());
-
-		return ResponseEntity.status(e.getStatus())
 				.body(err);
 	}
 

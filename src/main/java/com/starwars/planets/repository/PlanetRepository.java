@@ -1,6 +1,6 @@
 package com.starwars.planets.repository;
 
-import com.starwars.planets.Model.Planet;
+import com.starwars.planets.model.Planet;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

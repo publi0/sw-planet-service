@@ -2,6 +2,7 @@ package com.starwars.planets.controller;
 
 import com.starwars.planets.dto.request.CreatePlanetRequest;
 import com.starwars.planets.dto.response.FindPlanetResponse;
+import com.starwars.planets.model.Planet;
 import com.starwars.planets.service.PlanetService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -23,7 +24,6 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 import static com.starwars.planets.converter.PlanetConverter.convertToFindPlanetResponse;
-import static com.starwars.planets.converter.PlanetConverter.convertToPlanet;
 import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static javax.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
 
@@ -49,10 +49,8 @@ public class PlanetController extends AbstractRestController<String> {
 			@Valid @NotNull CreatePlanetRequest body) {
 		log.info("Request for create planet: [{}]", body);
 
-		log.info("Converting to Planet model");
-		final var planet = convertToPlanet(body);
-
-		final var createdPlanet = planetService.createPlanet(planet);
+		final var createdPlanet = planetService.createPlanet(
+				new Planet(body.getName(), body.getClimate(), body.getTerrain()));
 
 		log.info("Planet create with success!");
 		return newCreatedResponse(createdPlanet.getUuid());

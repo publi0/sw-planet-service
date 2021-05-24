@@ -14,10 +14,6 @@ public abstract class AbstractRestController<T> {
     return getCurrentRequestUriBuilder().path("/{id}").buildAndExpand(id).toUri();
   }
 
-  protected URI getCreatedURI() {
-    return getCurrentRequestUriBuilder().build().toUri();
-  }
-
   protected ResponseEntity<String> newCreatedResponse(T id) {
     String body = id instanceof Long ? "{ \"id\": " + id + "}" : "{ \"id\": \"" + id + "\"}";
     return newCreatedResponse(id, body);
@@ -25,11 +21,6 @@ public abstract class AbstractRestController<T> {
 
   protected <B> ResponseEntity<B> newCreatedResponse(T id, B body) {
     URI location = getCreatedURI(id);
-    return created(location).body(body);
-  }
-
-  protected <B> ResponseEntity<B> newCreatedResponseWithoutID(B body) {
-    URI location = getCreatedURI();
     return created(location).body(body);
   }
 
