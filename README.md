@@ -9,11 +9,12 @@ Star Wars Planet CRUD &amp; API Integration
 run `docker-compose up`
 
 ## Documentation and examples
-[http://localhost:9081/swagger-ui.html#/](http://localhost:9081/swagger-ui.html#/ "http://localhost:9081/swagger-ui.html#/")
+- Swagger URL
+  [http://localhost:9081/swagger-ui.html#/](http://localhost:9081/swagger-ui.html#/ "http://localhost:9081/swagger-ui.html#/")
 
-Postman collection
+- Postman collection
 
-![image](https://user-images.githubusercontent.com/14155185/119331527-d49d6f80-bc5d-11eb-93e3-00e2801fe19d.png)
+  ![image](https://user-images.githubusercontent.com/14155185/119331527-d49d6f80-bc5d-11eb-93e3-00e2801fe19d.png)
 
 ## Features
 - Add Planet (Name, Terrain, Climate)
