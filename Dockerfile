@@ -1,11 +1,8 @@
-FROM gradle:jdk16 as builder
-COPY --chown=gradle:gradle . /home/src
-WORKDIR /home/src
-RUN gradle build
+FROM gradle:jdk16
 
-FROM adoptopenjdk/openjdk16:alpine-slim as runner
-COPY --from=builder /home/src/build/libs/*.jar /app.jar
+COPY . /home/src
+WORKDIR /home/src
 
 EXPOSE 9081
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["gradle","--info","bootRun"]
